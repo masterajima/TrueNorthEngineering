@@ -1,12 +1,10 @@
 import "./App.css";
-
+import { Login } from "./Login";
+import { Register } from "./Register";
 function App() {
   return (
     <div className="App">
-      <nav
-        className="navbar navbar-expand-lg bg-body-tertiary "
-        data-bs-theme="dark"
-      >
+      <nav class="navbar bg-success" data-bs-theme="blue">
         <div className="container-fluid">
           <a className="navbar-brand" href="/">
             True North
@@ -83,6 +81,11 @@ function App() {
           </div>
         </div>
       </nav>
+      <br />
+      <br />
+      <section>
+        <Login />
+      </section>
     </div>
   );
 }
