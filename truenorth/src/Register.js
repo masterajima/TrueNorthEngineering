@@ -1,11 +1,29 @@
 import React, { useState } from "react";
+import axios from "axios";
 export const Register = (props) => {
   const [email, setEmail] = useState();
   const [pass, setPass] = useState();
   const [name, setName] = useState();
-  const handleSubmit = (e) => {
+  const [confirm, setConfirm] = useState("");
+  const [error, setError] = useState("");
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(email);
+    try {
+      const response = await axios.post("/api/register", {
+        email,
+        pass,
+        confirm,
+      });
+      const { token } = response.data;
+      localStorage.setItem("token", token);
+      setEmail();
+      setPass();
+      setConfirm();
+      setError();
+    } catch (error) {
+      setError(error.response.data.message);
+    }
   };
 
   return (

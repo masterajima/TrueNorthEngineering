@@ -23,7 +23,7 @@ const Login = () => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}></form>
+      <form onSubmit={handleSubmit} />
       <div className="grid grid-col-l sm:grid-col-2 h-screen w-full">
         <div className="hidden sm:block">
           <img className="w-full h-full object-cover" src={loginImg} alt="" />
