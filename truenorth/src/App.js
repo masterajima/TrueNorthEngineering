@@ -5,9 +5,11 @@ import Login2 from "./components/Login2";
 
 import Navbar from "./components/Navbar";
 
+const dbConnect = require("./db/dbConnect");
+dbConnect();
+
 function App() {
   //require database connection
-  const dbConnect = require("./db/dbConnect");
 
   //execute database connection
   return (
