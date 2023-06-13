@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 
 const dbConnect = require("./db/dbConnect");
 dbConnect();
+const User = require("./db/userModel");
 
 function App() {
   //require database connection
@@ -20,5 +21,6 @@ function App() {
     </>
   );
 }
+App.post("/register", (request, response) => {});
 
 export default App;
